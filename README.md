@@ -28,3 +28,16 @@ Result
 | 3  | "Forest and Paper Products - Forestry, Timber, Pulp and Paper, Rubber" | 
 | 4  | "Mining - Iron, Aluminum, Other Metals"                                | 
 | 5  | "Pharmaceuticals, Biotechnology & Life Sciences"                       | 
+
+### Table companies
+```sql
+SELECT * FROM companies LIMIT 5
+```
+Result
+| id | company_name                  | 
+| -: | ----------------------------: | 
+| 1  | "Autodesk, Inc."              | 
+| 2  | "Casio Computer Co., Ltd."    | 
+| 3  | "Cisco Systems, Inc."         | 
+| 4  | "CNX Coal Resources, LP"      | 
+| 5  | "Coca-Cola Enterprises, Inc." | 
