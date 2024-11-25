@@ -193,4 +193,17 @@ Result
 
 ### Answer: Germany is one of the countries contribute highest carbon emissions, 2nd is Greece and 3rd iss Colombia
 
-
+### 6. What is the trend of carbon footprints (PCFs) over the years?
+```sql
+SELECT
+       ind_gr.industry_group AS 'Industry Group',
+       ROUND(AVG(CASE WHEN pr_em.year = 2013 THEN pr_em.carbon_footprint_pcf ELSE 0 END), 2) AS '2013 Emission',
+       ROUND(AVG(CASE WHEN pr_em.year = 2014 THEN pr_em.carbon_footprint_pcf ELSE 0 END), 2) AS '2014 Emission',
+       ROUND(AVG(CASE WHEN pr_em.year = 2015 THEN pr_em.carbon_footprint_pcf ELSE 0 END), 2) AS '2015 Emission',
+       ROUND(AVG(CASE WHEN pr_em.year = 2016 THEN pr_em.carbon_footprint_pcf ELSE 0 END), 2) AS '2016 Emission',
+       ROUND(AVG(CASE WHEN pr_em.year = 2017 THEN pr_em.carbon_footprint_pcf ELSE 0 END), 2) AS '2017 Emission'
+FROM product_emissions pr_em
+JOIN industry_groups ind_gr ON ind_gr.id = pr_em.industry_group_id
+GROUP BY ind_gr.industry_group
+ORDER BY ind_gr.industry_group ASC;
+```
