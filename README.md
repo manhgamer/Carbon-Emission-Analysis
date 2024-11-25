@@ -41,3 +41,16 @@ Result
 | 3  | "Cisco Systems, Inc."         | 
 | 4  | "CNX Coal Resources, LP"      | 
 | 5  | "Coca-Cola Enterprises, Inc." | 
+
+### Table countries
+```sql
+SELECT * FROM countries LIMIT 5
+```
+Result
+| id | country_name | 
+| -: | -----------: | 
+| 1  | Australia    | 
+| 2  | Belgium      | 
+| 3  | Brazil       | 
+| 4  | Canada       | 
+| 5  | Chile        | 
