@@ -55,8 +55,8 @@ Result
 | 4  | Canada       | 
 | 5  | Chile        | 
 
-##Answer the Question
-###1. Which products contribute the most to carbon emissions?
+## Answer the Question
+### 1. Which products contribute the most to carbon emissions?
 ```SQL
 SELECT  
      product_name, 
@@ -80,5 +80,6 @@ Result
 | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.0000   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.0000   | 
 
-###Descriptions for answer: Wind Turbine, Steel Sheet Piles, Car Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV, Mercedes-Benz contribute the most to carbon emissions.
+### Descriptions for answer: 
+Wind Turbine, Steel Sheet Piles, Car Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV, Mercedes-Benz contribute the most to carbon emissions.
 2. 
