@@ -79,7 +79,7 @@ Result
 | Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000.0000   | 
 | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.0000   | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.0000   | 
-### Descriptions for answer: 
+### Answer: 
 Wind Turbine, Steel Sheet Piles, Car Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV, Mercedes-Benz contribute the most to carbon emissions.
 
 ### 2. What are the industry groups of these products?
@@ -108,5 +108,31 @@ Result
 | Automobiles & Components           | Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000.0000   | 
 | Automobiles & Components           | Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.0000   | 
 | Automobiles & Components           | Mercedes-Benz SL (SL 350)                                                                                                          | 72000.0000   | 
-Answer: 
 
+### Answer: Industry group of these products are Electrical Equipment and Machinery, Materials, Automobiles & Components        
+### 3. What are the industries with the highest contribution to carbon emissions?
+```SQL
+SELECT  
+	 industry_group,
+     ROUND(AVG(carbon_footprint_pcf),2) AS Avg_PCF
+FROM product_emissions prd_em
+JOIN industry_groups ind_gr 
+    ON prd_em.industry_group_id = ind_gr.id
+GROUP BY industry_group
+ORDER BY avg(carbon_footprint_pcf) DESC
+LIMIT 10
+```
+Result
+| industry_group                                   | Avg_PCF   | 
+| -----------------------------------------------: | --------: | 
+| Electrical Equipment and Machinery               | 891050.73 | 
+| Automobiles & Components                         | 35373.48  | 
+| "Pharmaceuticals, Biotechnology & Life Sciences" | 24162.00  | 
+| Capital Goods                                    | 7391.77   | 
+| Materials                                        | 3208.86   | 
+| "Mining - Iron, Aluminum, Other Metals"          | 2727.00   | 
+| Energy                                           | 2154.80   | 
+| Chemicals                                        | 1949.03   | 
+| Media                                            | 1534.47   | 
+| Software & Services                              | 1368.94   | 
+### Answer: the industries with the highest contribution to carbon emissions are Electrical Equiqment and Machinery.
