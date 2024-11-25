@@ -136,3 +136,5 @@ Result
 | Media                                            | 1534.47   | 
 | Software & Services                              | 1368.94   | 
 ### Answer: the industries with the highest contribution to carbon emissions are Electrical Equiqment and Machinery.
+
+### 4. What are the companies with the highest contribution to carbon emissions?
