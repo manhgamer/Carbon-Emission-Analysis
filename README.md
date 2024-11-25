@@ -138,3 +138,59 @@ Result
 ### Answer: the industries with the highest contribution to carbon emissions are Electrical Equiqment and Machinery.
 
 ### 4. What are the companies with the highest contribution to carbon emissions?
+```sql
+SELECT  
+	 company_name,
+     ROUND(AVG(carbon_footprint_pcf),2) AS Avg_PCF
+FROM product_emissions prd_em
+JOIN companies cpns
+    ON prd_em.company_id = cpns.id
+GROUP BY company_name
+ORDER BY avg(carbon_footprint_pcf) DESC
+LIMIT 10
+```
+Result
+| company_name                           | Avg_PCF    | 
+| -------------------------------------: | ---------: | 
+| "Gamesa Corporación Tecnológica, S.A." | 2444616.00 | 
+| "Hino Motors, Ltd."                    | 191687.00  | 
+| Arcelor Mittal                         | 83503.50   | 
+| Weg S/A                                | 53551.67   | 
+| Daimler AG                             | 43089.19   | 
+| General Motors Company                 | 34251.75   | 
+| Volkswagen AG                          | 26238.40   | 
+| Waters Corporation                     | 24162.00   | 
+| "Daikin Industries, Ltd."              | 17600.00   | 
+| CJ Cheiljedang                         | 15802.83   | 
+
+### Answer: the companies with the highest contribution to carbon emissions are 1st. Gamesa Corporación Tecnológica, 2nd S.A, Hino Motors, Ltd., 3rd Arcelor Mittal 
+
+### 5. What are the countries with the highest contribution to carbon emissions?
+```sql
+SELECT  
+	 country_name,
+     ROUND(AVG(carbon_footprint_pcf),2) AS Avg_PCF
+FROM product_emissions prd_em
+JOIN countries ctrs
+    ON prd_em.company_id = ctrs.id
+GROUP BY country_name
+ORDER BY avg(carbon_footprint_pcf) DESC
+LIMIT 10
+```
+Result
+| country_name | Avg_PCF    | 
+| -----------: | ---------: | 
+| Germany      | 2444616.00 | 
+| Greece       | 191687.00  | 
+| Colombia     | 17600.00   | 
+| Lithuania    | 13251.00   | 
+| Italy        | 10000.00   | 
+| India        | 9328.00    | 
+| South Africa | 3550.50    | 
+| China        | 3499.50    | 
+| Canada       | 3025.00    | 
+| Belgium      | 2344.00    | 
+
+### Answer: Germany is one of the countries contribute highest carbon emissions, 2nd is Greece and 3rd iss Colombia
+
+
