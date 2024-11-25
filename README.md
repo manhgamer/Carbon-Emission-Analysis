@@ -2,9 +2,9 @@
 
 ## Data Structure
 ### Table product_emissions
-~
+```sql
 SELECT * FROM product_emissions LIMIT 5;
-~
+```
 Result
 
 | id           | company_id | country_id | industry_group_id | year | product_name                                                    | weight_kg | carbon_footprint_pcf | upstream_percent_total_pcf | operations_percent_total_pcf | downstream_percent_total_pcf | 
