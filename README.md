@@ -54,3 +54,31 @@ Result
 | 3  | Brazil       | 
 | 4  | Canada       | 
 | 5  | Chile        | 
+
+##Answer the Question
+###1. Which products contribute the most to carbon emissions?
+```SQL
+SELECT  
+     product_name, 
+     avg(carbon_footprint_pcf) AS Avg_PCF
+FROM product_emissions
+GROUP BY product_name
+ORDER BY avg(carbon_footprint_pcf) DESC
+LIMIT 10
+```
+Result
+| product_name                                                                                                                       | Avg_PCF      | 
+| ---------------------------------------------------------------------------------------------------------------------------------: | -----------: | 
+| Wind Turbine G128 5 Megawats                                                                                                       | 3718044.0000 | 
+| Wind Turbine G132 5 Megawats                                                                                                       | 3276187.0000 | 
+| Wind Turbine G114 2 Megawats                                                                                                       | 1532608.0000 | 
+| Wind Turbine G90 2 Megawats                                                                                                        | 1251625.0000 | 
+| Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV def unit.                                                                 | 191687.0000  | 
+| Retaining wall structure with a main wall (sheet pile): 136 tonnes of steel sheet piles and 4 tonnes of tierods per 100 meter wall | 167000.0000  | 
+| TCDE                                                                                                                               | 99075.0000   | 
+| Mercedes-Benz GLE (GLE 500 4MATIC)                                                                                                 | 91000.0000   | 
+| Mercedes-Benz S-Class (S 500)                                                                                                      | 85000.0000   | 
+| Mercedes-Benz SL (SL 350)                                                                                                          | 72000.0000   | 
+
+###Descriptions for answer: Wind Turbine, Steel Sheet Piles, Car Land Cruiser Prado. FJ Cruiser. Dyna trucks. Toyoace.IMV, Mercedes-Benz contribute the most to carbon emissions.
+2. 
